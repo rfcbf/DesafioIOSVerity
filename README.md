@@ -19,11 +19,9 @@ Fazer um app nativo ios que carregue dados de usuário do GitHub, Detalhes e rep
 
 | | |
 | --------- | ------- |
-| <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image1.png" width="480" height="720" /></center> |
-| <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image2.png" width="480" height="720" /></center> |
-| <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image3.png" width="480" height="720" /></center> |
-| <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image4.png" width="480" height="720" /></center> |
-| <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image5.png" width="480" height="720" /></center> |
+| <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image1.png" width="480" height="720" /></center> | <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image2.png" width="480" height="720" /></center> |
+| <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image3.png" width="480" height="720" /></center> | <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image4.png" width="480" height="720" /></center> |
+| <center><img src="https://github.com/rfcbf/DesafioIOSVerity/blob/main/Midias/image5.png" width="480" height="720" /></center> ||
 
 ## O que foi feito?
 
