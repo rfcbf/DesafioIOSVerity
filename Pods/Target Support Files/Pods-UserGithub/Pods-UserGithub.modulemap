@@ -1,0 +1,6 @@
+framework module Pods_UserGithub {
+  umbrella header "Pods-UserGithub-umbrella.h"
+
+  export *
+  module * { export * }
+}
