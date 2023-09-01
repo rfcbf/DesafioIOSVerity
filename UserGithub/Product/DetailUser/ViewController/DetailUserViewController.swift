@@ -35,7 +35,7 @@ class DetailUserViewController: UIViewController {
 
 extension DetailUserViewController {
     
-    private func setUpView(_ user: DetailUserModel) {
+    func setUpView(_ user: DetailUserModel) {
         if let _ = self.presenter?.viewModel.login {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "code_fork", in: Bundle.main, compatibleWith: nil),
                                                                      style: .plain, target: self, action: #selector(addTapped))
@@ -51,7 +51,7 @@ extension DetailUserViewController {
         view.setup(user: user)
     }
     
-    private func setUpNavigation() {
+    func setUpNavigation() {
         self.presenter?.navigationItem = self.navigationItem
         self.title = self.presenter?.title
         self.navigationItem.backButtonTitle = self.presenter?.backButtonTitle

@@ -62,7 +62,7 @@ class HomePresenter: HomePresenterInputProtocol {
         loadData()
     }
     
-    private func loadData() {
+    func loadData() {
         DispatchQueue(label: "Fetch Users").async {
             if ReachabilityNotifier.instance.isNetworkAvailable {
                 self.interactor.fetch()

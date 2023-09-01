@@ -1,4 +1,3 @@
-//
 //  API.swift
 //  UserGithub
 //
@@ -15,84 +14,68 @@ public class API {
     
     func getUsers(completion: @escaping UsersHandler) {
         let url = APIBuilder().getUsers().buildURL()
-        NetworkRequest.instance.get(url: url,
-                                    headers: nil,
-                                    completion: { json in
-            
+        NetworkRequest.instance.get(url: url, headers: nil) { json in
             var responseUser: [UsersModel] = []
             
-            if let users = json as? Array<Any> {
-                for user in users {
-                    if let respUSER = user as? Dictionary<String, Any> {
-                        if let result = APIFactory.decode(users: respUSER) {
-                            responseUser.append(result)
-                        } else {
-                            Logs.e("Erro ao parsear a resposta da API.")
-                            completion(nil)
-                        }
-                    } else {
-                        Logs.e("Erro ao parsear JSON: \(json)")
-                        completion(nil)
-                    }
-                }
-            } else {
+            guard let users = json as? [[String: Any]] else {
                 Logs.e("Erro ao parsear JSON: \(json)")
                 completion(nil)
+                return
             }
-
+            
+            for user in users {
+                guard let result = APIFactory.decode(users: user) else {
+                    Logs.e("Erro ao parsear a resposta da API.")
+                    completion(nil)
+                    return
+                }
+                responseUser.append(result)
+            }
+            
             completion(responseUser)
-        })
+        }
     }
     
     func getDeatilUsers(user: String, completion: @escaping DetailUsersHandler) {
         let url = APIBuilder().getDetailUser(user: user).buildURL()
-        NetworkRequest.instance.get(url: url,
-                                    headers: nil,
-                                    completion: { json in
-            
-            if let response = json as? Dictionary<String, Any> {
-                if let result = APIFactory.decode(detailUser: response) {
-                    completion(result)
-                } else {
-                    Logs.e("Erro ao parsear a resposta da API.")
-                    completion(nil)
-                }
-            } else {
+        NetworkRequest.instance.get(url: url, headers: nil) { json in
+            guard let response = json as? [String: Any] else {
                 Logs.e("Erro ao parsear JSON: \(json)")
                 completion(nil)
+                return
             }
-
-        })
+            
+            guard let result = APIFactory.decode(detailUser: response) else {
+                Logs.e("Erro ao parsear a resposta da API.")
+                completion(nil)
+                return
+            }
+            
+            completion(result)
+        }
     }
 
     func getRepo(user: String, completion: @escaping RepoHandler) {
         let url = APIBuilder().getRepos(user: user).buildURL()
-        NetworkRequest.instance.get(url: url,
-                                    headers: nil,
-                                    completion: { json in
-            
+        NetworkRequest.instance.get(url: url, headers: nil) { json in
             var responseRepos: [RepoModel] = []
             
-            if let repos = json as? Array<Any> {
-                for repo in repos {
-                    if let respRepo = repo as? Dictionary<String, Any> {
-                        if let result = APIFactory.decode(repo: respRepo) {
-                            responseRepos.append(result)
-                        } else {
-                            Logs.e("Erro ao parsear a resposta da API.")
-                            completion(nil)
-                        }
-                    } else {
-                        Logs.e("Erro ao parsear JSON: \(json)")
-                        completion(nil)
-                    }
-                }
-            } else {
+            guard let repos = json as? [[String: Any]] else {
                 Logs.e("Erro ao parsear JSON: \(json)")
                 completion(nil)
+                return
             }
-
+            
+            for repo in repos {
+                guard let result = APIFactory.decode(repo: repo) else {
+                    Logs.e("Erro ao parsear a resposta da API.")
+                    completion(nil)
+                    return
+                }
+                responseRepos.append(result)
+            }
+            
             completion(responseRepos)
-        })
+        }
     }
 }

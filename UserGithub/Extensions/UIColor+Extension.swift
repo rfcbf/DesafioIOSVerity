@@ -20,7 +20,7 @@ public extension UIColor {
         return UIColor(red: 1.00, green: 0.58, blue: 0.00, alpha: 1.00)
     }
     
-    static var separator: UIColor {
+    static var barSeparator: UIColor {
         return UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 0.90)
     }
     

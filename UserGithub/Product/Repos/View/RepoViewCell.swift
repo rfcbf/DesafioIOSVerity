@@ -38,11 +38,11 @@ public class RepoViewCell: UITableViewCell {
         self.controller?.setData()
     }
 
-    private func initWidgets() {
+    func initWidgets() {
         self.repoView = RepoView()
         
         self.bottomSeparator = UIView()
-        self.bottomSeparator.backgroundColor = UIColor.separator
+        self.bottomSeparator.backgroundColor = UIColor.barSeparator
     }
     
     private func addViews() {

@@ -47,7 +47,7 @@ public class NetworkRequest: NetworkProtocol {
         })
     }
     
-    private func asURL(_ sUrl: String) -> URLConvertible {
+    func asURL(_ sUrl: String) -> URLConvertible {
         guard let url = URL(string: sUrl) else {
             fatalError("Erro ao criar URL: \(sUrl)")
         }

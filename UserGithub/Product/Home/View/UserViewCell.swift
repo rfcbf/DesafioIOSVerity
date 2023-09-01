@@ -38,14 +38,14 @@ public class UserViewCell: UITableViewCell {
         self.controller?.setData()
     }
 
-    private func initWidgets() {
+    func initWidgets() {
         self.userView = UserView() 
         
         self.bottomSeparator = UIView()
-        self.bottomSeparator.backgroundColor = UIColor.separator
+        self.bottomSeparator.backgroundColor = UIColor.barSeparator
     }
     
-    private func addViews() {
+    func addViews() {
         self.subviews.forEach({view in
             view.removeFromSuperview()
         })
@@ -53,7 +53,7 @@ public class UserViewCell: UITableViewCell {
         self.addSubview(bottomSeparator)
     }
     
-    private func updateViews() {
+    func updateViews() {
         self.userView.frame = CGRect(x: 0,
                                      y: 0,
                                      width: self.frame.size.width,

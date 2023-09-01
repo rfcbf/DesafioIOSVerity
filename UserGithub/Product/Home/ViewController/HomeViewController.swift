@@ -211,9 +211,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension HomeViewController: UISearchBarDelegate {
-    
-}
+extension HomeViewController: UISearchBarDelegate {}
 
 extension HomeViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
